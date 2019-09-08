@@ -12,7 +12,7 @@ mcp230xx:
 
     Deck Jets:
       pin: [0,1,2,3,4,5,6,7,8,9,10,11]
-      topic: '/{root_topic}/deckjet{index}' # POOLCONTROL/deckjet{index}
+      topic: '/{root_topic}/deckjet/{index}' # POOLCONTROL/deckjet/{index}
       first index: 1
       direction: output
       invert: true
