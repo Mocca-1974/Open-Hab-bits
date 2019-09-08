@@ -171,3 +171,13 @@ inputs:
   topic: inreadsw
   directio: input
   initial state: low
+
+   pin: 
+  topic: umupreadsw
+  directio: input
+  initial state: low
+
+   pin: 11
+  topic: umdownreadsw
+  directio: input
+  initial state: low
