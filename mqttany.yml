@@ -83,27 +83,27 @@ mcp230xx:
       invert: true
 
     fan:
-      pin: [7, 15]
+      pin: [7, 8]
       topic: '/{root_topic}/{pin_name}/{index}' # POOLCONTROL/fan/{index}
       first index: 1
       direction: output
       invert: true
 
     warn:
-      pin: [8, 9, 11]
+      pin: [9, 10, 11]
       topic: '/{root_topic}/{pin_name}/{index}' # POOLCONTROL/warn/{index}
       first index: 1
       direction: output
       invert: true
 
     airblower:
-      pin: 13
+      pin: 12
       topic: '/{root_topic}/{pin_name}' # POOLCONTROL/airblower
       direction: output
       invert: true
 
     acidpump:
-      pin: 14
+      pin: 13
       topic: '/{root_topic}/{pin_name}' # POOLCONTROL/acidpump
       direction: output
       invert: true
