@@ -2,6 +2,35 @@ mqtt:
   host: 192.168.1.34
   root topic: mqttanytest
 
+
+gpio:
+  polling interval: 60
+
+  umbrella:
+    pin: [5, 11]
+    topic: [
+      '/{root_topic}/{pin_name}/switch/up', # POOLCONTROL/umbrella/switch/up
+      '/{root_topic}/{pin_name}/switch/down', # POOLCONTROL/umbrella/switch/down
+    ]
+    invert: true
+
+  pit:
+    pin: [26, 19, 13, 6]
+    topic: [
+      '/{root_topic}/{pin_name}/switch/up', # POOLCONTROL/pit/switch/up
+      '/{root_topic}/{pin_name}/switch/down', # POOLCONTROL/pit/switch/down
+      '/{root_topic}/{pin_name}/switch/out', # POOLCONTROL/pit/switch/out
+      '/{root_topic}/{pin_name}/switch/in', # POOLCONTROL/pit/switch/in
+    ]
+    invert: true
+
+  floatswitch:
+    pin: [21, 20, 16, 12]
+    topic: '/{root_topic}/{pin_name}/{index}' # POOLCONTROL/floatswitch/{index}
+    first index: 1
+    invert: true
+
+
 mcp230xx:
   polling interval: 60
 
@@ -10,21 +39,20 @@ mcp230xx:
     address: 0x21
     chip: mcp23017
 
-    Deck Jets:
+    deckjet:
       pin: [0,1,2,3,4,5,6,7,8,9,10,11]
-      topic: '/{root_topic}/deckjet/{index}' # POOLCONTROL/deckjet/{index}
+      topic: '/{root_topic}/{pin_name}/{index}' # POOLCONTROL/deckjet/{index}
       first index: 1
       direction: output
       invert: true
-      initial state: "OFF"
 
     water:
-      pin: [13, 14, 15, 16]
+      pin: [12, 13, 14, 15]
       topic: [
-        '/{root_topic}/water/pump', # POOLCONTROL/water/pump
-        '/{root_topic}/water/fall', # POOLCONTROL/water/fall
-        '/{root_topic}/water/fill', # POOLCONTROL/water/fill
-        '/{root_topic}/water/overfill', # POOLCONTROL/water/overfill
+        '/{root_topic}/{pin_name}/pump', # POOLCONTROL/water/pump
+        '/{root_topic}/{pin_name}/fall', # POOLCONTROL/water/fall
+        '/{root_topic}/{pin_name}/fill', # POOLCONTROL/water/fill
+        '/{root_topic}/{pin_name}/overfill', # POOLCONTROL/water/overfill
       ]
       direction: output
       invert: true
@@ -34,54 +62,36 @@ mcp230xx:
     address: 0x20
     chip: mcp23017
    
-    umbrella output:
+    umbrella:
       pin: [1, 2]
       topic: [
-        '/{root_topic}/umbrella/relay/up', # POOLCONTROL/umbrella/relay/up
-        '/{root_topic}/umbrella/relay/down', # POOLCONTROL/umbrella/relay/down
+        '/{root_topic}/{pin_name}/relay/up', # POOLCONTROL/umbrella/relay/up
+        '/{root_topic}/{pin_name}/relay/down', # POOLCONTROL/umbrella/relay/down
       ]
       direction: output
       invert: true
 
-    umbrella input:
-      pin: [5, 11]
-      topic: [
-        '/{root_topic}/umbrella/switch/up', # POOLCONTROL/umbrella/switch/up
-        '/{root_topic}/umbrella/switch/down', # POOLCONTROL/umbrella/switch/down
-      ]
-      direction: input
-
-    pit output:
+    pit:
       pin: [3, 4, 5, 6]
       topic: [
-        '/{root_topic}/pit/relay/up', # POOLCONTROL/pit/relay/up
-        '/{root_topic}/pit/relay/down', # POOLCONTROL/pit/relay/down
-        '/{root_topic}/pit/relay/out', # POOLCONTROL/pit/relay/out
-        '/{root_topic}/pit/relay/in', # POOLCONTROL/pit/relay/in
+        '/{root_topic}/{pin_name}/relay/up', # POOLCONTROL/pit/relay/up
+        '/{root_topic}/{pin_name}/relay/down', # POOLCONTROL/pit/relay/down
+        '/{root_topic}/{pin_name}/relay/out', # POOLCONTROL/pit/relay/out
+        '/{root_topic}/{pin_name}/relay/in', # POOLCONTROL/pit/relay/in
       ]
       direction: output
       invert: true
 
-    pit input:
-      pin: [26, 19, 13, 6]
-      topic: [
-        '/{root_topic}/pit/switch/up', # POOLCONTROL/pit/switch/up
-        '/{root_topic}/pit/switch/down', # POOLCONTROL/pit/switch/down
-        '/{root_topic}/pit/switch/out', # POOLCONTROL/pit/switch/out
-        '/{root_topic}/pit/switch/in', # POOLCONTROL/pit/switch/in
-      ]
-      direction: input
-
     fan:
-      pin: [7, 2]
-      topic: '/{root_topic}/fan/{index}' # POOLCONTROL/fan/{index}
+      pin: [7, 15]
+      topic: '/{root_topic}/{pin_name}/{index}' # POOLCONTROL/fan/{index}
       first index: 1
       direction: output
       invert: true
 
     warn:
       pin: [8, 9, 11]
-      topic: '/{root_topic}/warn/{index}' # POOLCONTROL/warn/{index}
+      topic: '/{root_topic}/{pin_name}/{index}' # POOLCONTROL/warn/{index}
       first index: 1
       direction: output
       invert: true
@@ -97,9 +107,3 @@ mcp230xx:
       topic: '/{root_topic}/{pin_name}' # POOLCONTROL/acidpump
       direction: output
       invert: true
-
-    float switches:
-      pin: [21, 20, 16, 12]
-      topic: '/{root_topic}/floatswitch/{index}' # POOLCONTROL/floatswitch/{index}
-      first index: 1
-      direction: input
