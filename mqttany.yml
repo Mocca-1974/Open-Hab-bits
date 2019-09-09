@@ -5,179 +5,101 @@ mqtt:
 mcp230xx:
   polling interval: 60
 
-        
-Bus1output: 
+  Bus 1: 
     bus id: 1
     address: 0x21
     chip: mcp23017
+
     Deck Jets:
       pin: [0,1,2,3,4,5,6,7,8,9,10,11]
-      topic: 'deckjet{index}'
+      topic: '/{root_topic}/deckjet/{index}' # POOLCONTROL/deckjet/{index}
       first index: 1
       direction: output
       invert: true
       initial state: "OFF"
 
-    waterpump:
-      pin12:
-      pin: 13 
+    water:
+      pin: [13, 14, 15, 16]
+      topic: [
+        '/{root_topic}/water/pump', # POOLCONTROL/water/pump
+        '/{root_topic}/water/fall', # POOLCONTROL/water/fall
+        '/{root_topic}/water/fill', # POOLCONTROL/water/fill
+        '/{root_topic}/water/overfill', # POOLCONTROL/water/overfill
+      ]
       direction: output
       invert: true
 
-    waterfal:
-      pin13:
-      pin: 14 
-      direction: output
-      invert: true
-
-    waterfill:
-      pin14:
-      pin: 15 
-      direction: output
-      invert: true
-
-    overfillsol:
-      pin15:
-      pin: 16 
-      direction: output
-      invert: true
-
-motion: 
+  Bus 2: 
     bus id: 1
     address: 0x20
     chip: mcp23017
    
-    umup:
-      pin0:
-      pin: 1 
+    umbrella output:
+      pin: [1, 2]
+      topic: [
+        '/{root_topic}/umbrella/relay/up', # POOLCONTROL/umbrella/relay/up
+        '/{root_topic}/umbrella/relay/down', # POOLCONTROL/umbrella/relay/down
+      ]
       direction: output
       invert: true
 
-    umdown:
-      pin1:
-      pin: 2 
+    umbrella input:
+      pin: [5, 11]
+      topic: [
+        '/{root_topic}/umbrella/switch/up', # POOLCONTROL/umbrella/switch/up
+        '/{root_topic}/umbrella/switch/down', # POOLCONTROL/umbrella/switch/down
+      ]
+      direction: input
+
+    pit output:
+      pin: [3, 4, 5, 6]
+      topic: [
+        '/{root_topic}/pit/relay/up', # POOLCONTROL/pit/relay/up
+        '/{root_topic}/pit/relay/down', # POOLCONTROL/pit/relay/down
+        '/{root_topic}/pit/relay/out', # POOLCONTROL/pit/relay/out
+        '/{root_topic}/pit/relay/in', # POOLCONTROL/pit/relay/in
+      ]
       direction: output
       invert: true
 
-    pitup:
-      pin2:
-      pin: 3 
+    pit input:
+      pin: [26, 19, 13, 6]
+      topic: [
+        '/{root_topic}/pit/switch/up', # POOLCONTROL/pit/switch/up
+        '/{root_topic}/pit/switch/down', # POOLCONTROL/pit/switch/down
+        '/{root_topic}/pit/switch/out', # POOLCONTROL/pit/switch/out
+        '/{root_topic}/pit/switch/in', # POOLCONTROL/pit/switch/in
+      ]
+      direction: input
+
+    fan:
+      pin: [7, 2]
+      topic: '/{root_topic}/fan/{index}' # POOLCONTROL/fan/{index}
+      first index: 1
       direction: output
       invert: true
 
-    pitdown:
-      pin3:
-      pin: 4 
-      direction: output
-      invert: true
-
-    pitout:
-      pin4:
-      pin: 5 
-      direction: output
-      invert: true 
-
-    pitin:
-      pin5:
-      pin: 6 
-      direction: output
-      invert: true
-
-    fanoutput1:
-      pin6:
-      pin: 7 
-      direction: output
-      invert: true
-
-    warn1:
-      pin7:
-      pin: 8 
-      direction: output
-      invert: true
-
-    warn2:
-      pin8:
-      pin: 9 
-      direction: output
-      invert: true
-
-    warn3:
-      pin10:
-      pin: 11 
-      direction: output
-      invert: true
-
-    fanoutput2:
-      pin11:
-      pin: 2 
+    warn:
+      pin: [8, 9, 11]
+      topic: '/{root_topic}/warn/{index}' # POOLCONTROL/warn/{index}
+      first index: 1
       direction: output
       invert: true
 
     airblower:
-      pin12:
-      pin: 13 
+      pin: 13
+      topic: '/{root_topic}/{pin_name}' # POOLCONTROL/airblower
       direction: output
       invert: true
 
     acidpump:
-      pin13:
-      pin: 14 
+      pin: 14
+      topic: '/{root_topic}/{pin_name}' # POOLCONTROL/acidpump
       direction: output
       invert: true
 
-
-inputs:
-  pin: 21
-  topic: floatsw1
-  directio: input
-  initial state: low
-
-  pin: 20
-  topic: floatsw2
-  directio: input
-  initial state: low
-
-  pin: 16
-  topic: floatsw3
-  directio: input
-  initial state: low
-
-  pin: 12
-  topic: floatsw4
-  directio: input
-  initial state: low
-
-  pin: 16
-  topic: floatsw3
-  directio: input
-  initial state: low
-
-  pin: 26
-  topic: upreadsw
-  directio: input
-  initial state: low
-
-  pin: 19
-  topic: downreadsw
-  directio: input
-  initial state: low
-
-  pin: 13
-  topic: outreadsw
-  directio: input
-  initial state: low
-
-  pin: 6
-  topic: inreadsw
-  directio: input
-  initial state: low
-
-   pin: 
-  topic: umupreadsw
-  directio: input
-  initial state: low
-
-   pin: 11
-  topic: umdownreadsw
-  directio: input
-  initial state: low
+    float switches:
+      pin: [21, 20, 16, 12]
+      topic: '/{root_topic}/floatswitch/{index}' # POOLCONTROL/floatswitch/{index}
+      first index: 1
+      direction: input
