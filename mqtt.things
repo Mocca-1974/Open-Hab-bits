@@ -20,14 +20,14 @@ Bridge mqtt:broker:home "home mqtt server" [host="openhabianpi",secure=false,cli
        Type switch : waterfill [stateTopic="POOLCONTROL/water/fill", commandTopic="POOLCONTROL/water/fill/set", on="ON", off="OFF"]
        Type switch : wateroverfill [stateTopic="POOLCONTROL/water/overfill", commandTopic="POOLCONTROL/water/overfill/set", on="ON", off="OFF"]
 
-        Type switch : umbrellaup [stateTopic="POOLCONTROL/umbrella/up", commandTopic="POOLCONTROL/umbrella/up/set", on="ON", off="OFF"]
-        Type switch : umbrelladown [stateTopic="POOLCONTROL/umbrella/down", commandTopic="POOLCONTROL/umbrella/down/set", on="ON", off="OFF"]
+        Type switch : umbrellaup [stateTopic="POOLCONTROL/umbrella/relay/up", commandTopic="POOLCONTROL/umbrella/relay/up/set", on="ON", off="OFF"]
+        Type switch : umbrelladown [stateTopic="POOLCONTROL/umbrella/relay/down", commandTopic="POOLCONTROL/umbrella/relay/down/set", on="ON", off="OFF"]
 
 
-        Type switch : pitup [stateTopic="POOLCONTROL/pit/up", commandTopic="POOLCONTROL/pit/up/set", on="ON", off="OFF"]
-        Type switch : pitdown [stateTopic="POOLCONTROL/pit/down", commandTopic="POOLCONTROL/pit/down/set", on="ON", off="OFF"]
-        Type switch : pitout [stateTopic="POOLCONTROL/pit/out", commandTopic="POOLCONTROL/pit/out/set", on="ON", off="OFF"]
-        Type switch : pitin [stateTopic="POOLCONTROL/pit/in", commandTopic="POOLCONTROL/pit/in/set", on="ON", off="OFF"]
+        Type switch : pitup [stateTopic="POOLCONTROL/pit/relay/up", commandTopic="POOLCONTROL/pit/relay/up/set", on="ON", off="OFF"]
+        Type switch : pitdown [stateTopic="POOLCONTROL/pit/relay/down", commandTopic="POOLCONTROL/pit/relay/down/set", on="ON", off="OFF"]
+        Type switch : pitout [stateTopic="POOLCONTROL/pit/relay/out", commandTopic="POOLCONTROL/pit/relay/out/set", on="ON", off="OFF"]
+        Type switch : pitin [stateTopic="POOLCONTROL/pit/relay/in/", commandTopic="POOLCONTROL/pit/relay/in/set", on="ON", off="OFF"]
         
         Type switch : fan1 [stateTopic="POOLCONTROL/fan/1", commandTopic="POOLCONTROL/fan/1/set", on="ON", off="OFF"]
         Type switch : fan2 [stateTopic="POOLCONTROL/fan/2", commandTopic="POOLCONTROL/fan/2/set", on="ON", off="OFF"]
@@ -35,5 +35,8 @@ Bridge mqtt:broker:home "home mqtt server" [host="openhabianpi",secure=false,cli
         Type switch : airbower [stateTopic="POOLCONTROL/airblower", commandTopic="POOLCONTROL/airblower/set", on="ON", off="OFF"]
 
         Type switch : acidpump [stateTopic="POOLCONTROL/acidpump", commandTopic="POOLCONTROL/acidpump/set", on="ON", off="OFF"]
+
+         Type switch : umbrellaup [stateTopic="POOLCONTROL/acidpump", commandTopic="POOLCONTROL/acidpump/set", on="ON", off="OFF"]
+          Type switch : acidpump [stateTopic="POOLCONTROL/acidpump", commandTopic="POOLCONTROL/acidpump/set", on="ON", off="OFF"]
     }
 }
