@@ -49,10 +49,10 @@ mcp230xx:
     water:
       pin: [12, 13, 14, 15]
       topic: [
-        '/{root_topic}/{pin_name}/pump' # POOLCONTROL/water/pump
-        '/{root_topic}/{pin_name}/fall' # POOLCONTROL/water/fall
-        '/{root_topic}/{pin_name}/fill' # POOLCONTROL/water/fill
-        '/{root_topic}/{pin_name}/overfill' # POOLCONTROL/water/overfill
+        '/{root_topic}/{pin_name}/pump', # POOLCONTROL/water/pump
+        '/{root_topic}/{pin_name}/fall', # POOLCONTROL/water/fall
+        '/{root_topic}/{pin_name}/fill', # POOLCONTROL/water/fill
+        '/{root_topic}/{pin_name}/overfill', # POOLCONTROL/water/overfill
       ]
       direction: output
       invert: true
@@ -65,8 +65,8 @@ mcp230xx:
     umbrella:
       pin: [1, 2]
       topic: [
-        '/{root_topic}/{pin_name}/relay/up' # POOLCONTROL/umbrella/relay/up
-        '/{root_topic}/{pin_name}/relay/down' # POOLCONTROL/umbrella/relay/down
+        '/{root_topic}/{pin_name}/relay/up', # POOLCONTROL/umbrella/relay/up
+        '/{root_topic}/{pin_name}/relay/down', # POOLCONTROL/umbrella/relay/down
       ]
       direction: output
       invert: true
@@ -74,10 +74,10 @@ mcp230xx:
     pit:
       pin: [3, 4, 5, 6]
       topic: [
-        '/{root_topic}/{pin_name}/relay/up' # POOLCONTROL/pit/relay/up
-        '/{root_topic}/{pin_name}/relay/down' # POOLCONTROL/pit/relay/down
-        '/{root_topic}/{pin_name}/relay/out' # POOLCONTROL/pit/relay/out
-        '/{root_topic}/{pin_name}/relay/in' # POOLCONTROL/pit/relay/in
+        '/{root_topic}/{pin_name}/relay/up', # POOLCONTROL/pit/relay/up
+        '/{root_topic}/{pin_name}/relay/down', # POOLCONTROL/pit/relay/down
+        '/{root_topic}/{pin_name}/relay/out', # POOLCONTROL/pit/relay/out
+        '/{root_topic}/{pin_name}/relay/in', # POOLCONTROL/pit/relay/in
       ]
       direction: output
       invert: true
@@ -96,9 +96,9 @@ mcp230xx:
       direction: output
       invert: true
 
-    airblower:
+    airpump:
       pin: 12
-      topic: '/{root_topic}/{pin_name}' # POOLCONTROL/airblower
+      topic: '/{root_topic}/{pin_name}' # POOLCONTROL/airpump
       direction: output
       invert: true
 
