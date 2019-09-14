@@ -1,0 +1,24 @@
+//This is the SitemapsFile
+sitemap home label="Michael's-Smarthome" {
+    Frame label="Water Features" {
+        Group item=gJets icon="flow"
+        Switch item=gJets label="All Jets"
+        Switch item=WF label="Waterfall"  icon="water"
+    }
+    Frame label="Pumps"{
+        Switch item=Switch112 label="Water Pump" icon="faucet"
+        Switch item=Switch22 label="Air Pump" icon="pump"
+    }
+    Frame label="Pool Water Temp" {
+        Group item=gTemperature   icon="temperature"
+        Text item=onewiretemp1Value icon="temperature"
+    }
+    Frame label="Pit Controls"	{
+        Switch item=Switch23 label="Button 1" mappings=[ON="UP",OFF="off"]
+        Switch item=Switch24 label="Button 2" mappings=[ON="Down",OFF="Off"]
+    }
+    Frame label="Umbrella" {
+        Switch item=Switch21 label="Umbrella" mappings=[ON="UP",OFF=""]
+        Switch item=Switch22 label="Umbrella" mappings=[ON="DOWN",OFF=""]  icon="sun"
+    }
+}
