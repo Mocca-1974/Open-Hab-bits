@@ -1,0 +1,54 @@
+
+//This is the Items File
+
+//Demo items
+
+
+
+Group:Switch:OR(ON,OFF) gJets "Deck Jets"
+
+
+Switch channel1 "Deck Jet 1"(gJets) { channel="mqtt:topic:home:pool:deckjet1", autoupdate="false" }
+//Switch channel1 "Dech Jet 1"(gJets,AJ) { gpio="pin:27 activelow:yes initialValue:high" }
+Switch channel2 "Deck Jet 2"(gJets) { channel="mqtt:topic:home:pool:deckjet2", autoupdate="false" }
+//Switch channel2 "Deck Jet 2"(gJets) { gpio="pin:22 activelow:yes initialValue:high" }
+Switch channel3 "Deck Jet 3"(gJets) { channel="mqtt:topic:home:pool:deckjet3", autoupdate="false" }
+//Switch channel3 "Deck Jet 3"(gJets) { gpio="pin:10 activelow:yes initialValue:high" }
+Switch channel4 "Deck Jet 4"(gJets) { channel="mqtt:topic:home:pool:deckjet4", autoupdate="false" }
+Switch channel5 "Deck Jet 5"(gJets) { channel="mqtt:topic:home:pool:deckjet5", autoupdate="false" }
+//Switch channel5 "Deck Jet 5"(gJets) { gpio="pin:11 activelow:yes initialValue:high" }
+Switch channel6 "Deck Jet 6"(gJets) { channel="mqtt:topic:home:pool:deckjet6", autoupdate="false" }
+//Switch channel6 "Deck Jet 6"(gJets) { gpio="pin:5 activelow:yes initialValue:high" }
+Switch channel7 "Deck Jet 7"(gJets) { channel="mqtt:topic:home:pool:deckjet7", autoupdate="false" }
+//Switch channel7 "Deck Jet 7"(gJets) { gpio="pin:6 activelow:yes initialValue:high" }
+Switch channel8 "Deck Jet 8"(gJets) { channel="mqtt:topic:home:pool:deckjet8", autoupdate="false" }
+//Switch channel8 "Deck Jet 8"(gJets) { gpio="pin:13 activelow:yes initialValue:high" }
+Switch channel9 "Deck Jet 9"(gJets) { channel="mqtt:topic:home:pool:deckjet9", autoupdate="false" }
+//Switch channel9 "Deck Jet 9"(gJets) { gpio="pin:19 activelow:yes initialValue:high" }
+Switch channel10 "Deck Jet 10"(gJets) { channel="mqtt:topic:home:pool:deckjet10", autoupdate="false" }
+//Switch channel10 "Deck Jet 10"(gJets) { gpio="pin:26 activelow:yes initialValue:high" }
+Switch channel11 "Deck Jet 11"(gJets) { channel="mqtt:topic:home:pool:deckjet11", autoupdate="false" }
+//Switch channel11 "Deck Jet 11"(gJets) { gpio="pin:21 activelow:yes initialValue:high" }
+Switch channel12 "Deck Jet 12"(gJets) { channel="mqtt:topic:home:pool:deckjet12", autoupdate="false" }
+//Switch channel11 "Deck Jet 11"(gJets) { gpio="pin:21 activelow:yes initialValue:high" }
+
+Group gTemperature "water temp"
+
+String onewiretemp1Value "Temp 1 is [%s °C]"(gTemperature)  {channel="exec:command:onewiretemp1:output"}
+String onewiretemp2Value "Temp 2 is [%s °C]"(gTemperature)  {channel="exec:command:onewiretemp2:output"}
+String onewiretemp3Value "Temp 3 is [%s °C]"(gTemperature)  {channel="exec:command:onewiretemp3:output"}
+String onewiretemp4Value "Temp 4 is [%s °C]"(gTemperature)  {channel="exec:command:onewiretemp4:output"}
+String onewiretemp5Value "Temp 5 is [%s °C]"(gTemperature)  {channel="exec:command:onewiretemp5:output"}
+String onewiretemp6Value "Temp 6 is [%s °C]"(gTemperature)  {channel="exec:command:onewiretemp6:output"}
+
+
+/*
+Switch channel23   "Motion UP"    { channel="mqtt:topic:home:pool:pit:relay:up", autoupdate="false" }
+Switch xhannel24   "Motion DOWN"  { channel="mqtt:topic:home:pool:pit:relay:downd", autoupdate="false" }  
+Switch channel25       
+Switch channel26       {  
+
+Switch channel212 "airbpump"{ channe="mqtt:topic:home:pool:airpump", autoupdate="false" }
+
+Switch WF "Waterfall" { channel="mqtt:topic:home:pool:water:fall", autoupdate="false" }
+*/
