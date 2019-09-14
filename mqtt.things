@@ -1,5 +1,5 @@
-Bridge mqtt:broker:home "home mqtt server" [host="openhabianpi",secure=false,clientID="openhab" ] {
-    Thing topic pool "Pool Control"{
+Bridge mqtt:broker:home "home mqtt server" [host="openHABianPi",secure=false,clientID="openhab" ] {
+    Thing topic pool "POOLCONTROL"{
     Channels:
         
       Type switch : deckjet1 [stateTopic="POOLCONTROL/deckjet/1", commandTopic="POOLCONTROL/deckjet/1/set", on="ON", off="OFF"]
@@ -12,7 +12,7 @@ Bridge mqtt:broker:home "home mqtt server" [host="openhabianpi",secure=false,cli
       Type switch : deckjet8 [stateTopic="POOLCONTROL/deckjet/8", commandTopic="POOLCONTROL/deckjet/8/set", on="ON", off="OFF"]
       Type switch : deckjet9 [stateTopic="POOLCONTROL/deckjet/9", commandTopic="POOLCONTROL/deckjet/9/set", on="ON", off="OFF"]
       Type switch : deckjet10 [stateTopic="POOLCONTROL/deckjet/10", commandTopic="POOLCONTROL/deckjet/10/set", on="ON", off="OFF"]
-      TType switch : deckjet11 [stateTopic="POOLCONTROL/deckjet/11", commandTopic="POOLCONTROL/deckjet/11/set", on="ON", off="OFF"]
+      Type switch :deckjet11 [stateTopic="POOLCONTROL/deckjet/11", commandTopic="POOLCONTROL/deckjet/11/set", on="ON", off="OFF"]
       Type switch : deckjet12 [stateTopic="POOLCONTROL/deckjet/12", commandTopic="POOLCONTROL/deckjet/12/set", on="ON", off="OFF"]
       
        Type switch : waterpump [stateTopic="POOLCONTROL/water/pump", commandTopic="POOLCONTROL/water/pump/set", on="ON", off="OFF"]
@@ -20,23 +20,35 @@ Bridge mqtt:broker:home "home mqtt server" [host="openhabianpi",secure=false,cli
        Type switch : waterfill [stateTopic="POOLCONTROL/water/fill", commandTopic="POOLCONTROL/water/fill/set", on="ON", off="OFF"]
        Type switch : wateroverfill [stateTopic="POOLCONTROL/water/overfill", commandTopic="POOLCONTROL/water/overfill/set", on="ON", off="OFF"]
 
-        Type switch : umbrellaup [stateTopic="POOLCONTROL/umbrella/relay/up", commandTopic="POOLCONTROL/umbrella/relay/up/set", on="ON", off="OFF"]
-        Type switch : umbrelladown [stateTopic="POOLCONTROL/umbrella/relay/down", commandTopic="POOLCONTROL/umbrella/relay/down/set", on="ON", off="OFF"]
+      Type switch : umbrellaup [stateTopic="POOLCONTROL/umbrella/relay/up", commandTopic="POOLCONTROL/umbrella/relay/up/set", on="ON", off="OFF"]
+      Type switch : umbrelladown [stateTopic="POOLCONTROL/umbrella/relay/down", commandTopic="POOLCONTROL/umbrella/relay/down/set", on="ON", off="OFF"]
 
 
-        Type switch : pitup [stateTopic="POOLCONTROL/pit/relay/up", commandTopic="POOLCONTROL/pit/relay/up/set", on="ON", off="OFF"]
-        Type switch : pitdown [stateTopic="POOLCONTROL/pit/relay/down", commandTopic="POOLCONTROL/pit/relay/down/set", on="ON", off="OFF"]
-        Type switch : pitout [stateTopic="POOLCONTROL/pit/relay/out", commandTopic="POOLCONTROL/pit/relay/out/set", on="ON", off="OFF"]
-        Type switch : pitin [stateTopic="POOLCONTROL/pit/relay/in/", commandTopic="POOLCONTROL/pit/relay/in/set", on="ON", off="OFF"]
+      Type switch : pitup [stateTopic="POOLCONTROL/pit/relay/up", commandTopic="POOLCONTROL/pit/relay/up/set", on="ON", off="OFF"]
+      Type switch : pitdown [stateTopic="POOLCONTROL/pit/relay/down", commandTopic="POOLCONTROL/pit/relay/down/set", on="ON", off="OFF"]
+      Type switch : pitout [stateTopic="POOLCONTROL/pit/relay/out", commandTopic="POOLCONTROL/pit/relay/out/set", on="ON", off="OFF"]
+      Type switch : pitin [stateTopic="POOLCONTROL/pit/relay/in/", commandTopic="POOLCONTROL/pit/relay/in/set", on="ON", off="OFF"]
         
-        Type switch : fan1 [stateTopic="POOLCONTROL/fan/1", commandTopic="POOLCONTROL/fan/1/set", on="ON", off="OFF"]
-        Type switch : fan2 [stateTopic="POOLCONTROL/fan/2", commandTopic="POOLCONTROL/fan/2/set", on="ON", off="OFF"]
+      Type switch : fan1 [stateTopic="POOLCONTROL/fan/1", commandTopic="POOLCONTROL/fan/1/set", on="ON", off="OFF"]
+      Type switch : fan2 [stateTopic="POOLCONTROL/fan/2", commandTopic="POOLCONTROL/fan/2/set", on="ON", off="OFF"]
         
-        Type switch : airbower [stateTopic="POOLCONTROL/airblower", commandTopic="POOLCONTROL/airblower/set", on="ON", off="OFF"]
+      Type switch : airbower [stateTopic="POOLCONTROL/airblower", commandTopic="POOLCONTROL/airblower/set", on="ON", off="OFF"]
 
-        Type switch : acidpump [stateTopic="POOLCONTROL/acidpump", commandTopic="POOLCONTROL/acidpump/set", on="ON", off="OFF"]
+      Type switch : acidpump [stateTopic="POOLCONTROL/acidpump", commandTopic="POOLCONTROL/acidpump/set", on="ON", off="OFF"]
 
-         Type switch : umbrellaup [stateTopic="POOLCONTROL/acidpump", commandTopic="POOLCONTROL/acidpump/set", on="ON", off="OFF"]
-          Type switch : acidpump [stateTopic="POOLCONTROL/acidpump", commandTopic="POOLCONTROL/acidpump/set", on="ON", off="OFF"]
+      Type switch : umbrellaup [stateTopic="POOLCONTROL/acidpump", commandTopic="POOLCONTROL/acidpump/set", on="ON", off="OFF"]
+      Type switch : acidpump [stateTopic="POOLCONTROL/acidpump", commandTopic="POOLCONTROL/acidpump/set", on="ON", off="OFF"]
+
+      Type switch : umbrellaup [stateTopic="POOLCONTROL/umbrella/switch/up" , on="ON", off="OFF"]
+      Type switch : umbrelladown [stateTopic="POOLCONTROL/umbrella/switch/up" , on="ON", off="OFF"] 
+    
+      Type switch : pitup [stateTopic="POOLCONTROL/umbrella/switch/up" , on="ON", off="OFF"]
+      Type switch : pitdown [stateTopic="POOLCONTROL/umbrella/switch/up" , on="ON", off="OFF"]
+      Type switch : pitout [stateTopic="POOLCONTROL/umbrella/switch/up" , on="ON", off="OFF"]
+      Type switch : pitin [stateTopic="POOLCONTROL/umbrella/switch/up" , on="ON", off="OFF"]
+        }
+    
     }
-}
+    
+
+
