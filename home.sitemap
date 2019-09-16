@@ -3,22 +3,23 @@ sitemap home label="Michael's-Smarthome" {
     Frame label="Water Features" {
         Group item=gJets icon="flow"
         Switch item=gJets label="All Jets"
-        Switch item=WF label="Waterfall"  icon="water"
+        Switch item=channel114 label="Waterfall"  icon="water"
     }
     Frame label="Pumps"{
-        Switch item=Switch112 label="Water Pump" icon="faucet"
-        Switch item=Switch22 label="Air Pump" icon="pump"
+        Switch item=channel113 label="Water Pump" icon="faucet"
+        Switch item=switch212 label="Air Pump" icon="pump"
     }
     Frame label="Pool Water Temp" {
         Group item=gTemperature   icon="temperature"
         Text item=onewiretemp1Value icon="temperature"
     }
     Frame label="Pit Controls"	{
-        Switch item=Switch23 label="Button 1" mappings=[ON="UP",OFF="off"]
-        Switch item=Switch24 label="Button 2" mappings=[ON="Down",OFF="Off"]
+        Switch item=channel203 label="Pit Open"  mappings=[ON="Up" ,OFF="Stop"]
+        Switch item=channel204 label="Pit Closed"  mappings=[ON="Down" ,OFF="Stop"]
+
     }
     Frame label="Umbrella" {
-        Switch item=Switch21 label="Umbrella" mappings=[ON="UP",OFF=""]
-        Switch item=Switch22 label="Umbrella" mappings=[ON="DOWN",OFF=""]  icon="sun"
+        Switch item=channel201 label="Umbrella UP"  mappings=[ON="UP", OFF="Stop"]  icon="sun"
+        Switch item=channel202 label="Umbrella DOWN"  mappings=[ON="DOWN", OFF="Stop"] icon= "sun_clouds"
     }
 }
