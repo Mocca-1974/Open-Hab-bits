@@ -1,0 +1,65 @@
+
+rule "Relay UP"
+when
+      Item channel203  receivedcommand "ON"
+then
+         Create Timer (now.plusSeconds(5)) [|sendcommand(channel203 ,OFF)
+         pitswitchup recievedcomand "ON", Stop Timer
+end
+
+rule "relay out"
+when
+      Item channel203 receivedcommand "OFF"
+      pitswitch recievedcomand "ON"
+then
+        Item Switch205  sendcommand "ON"
+        Create Timer(now.plusSeconds(10)) [|sendcommand(Switch205 ,OFF)]
+        pitswitchout recievedcomand "on", Stop Timer
+end
+
+
+rule " Relay In"
+when
+      Item channel206  receivedcommand "ON"
+then  
+      Create Timer(now.plusSeconds(5)) [|sendcommand(channel205 ,OFF)
+       pitswitchin recievdcomand "ON", Stop Timer
+            
+end
+
+rule "relay Down"
+when
+      Item channel206 recievedcommand(channel205 ,OFF)
+      Item pitswitchin recievedcomand "ON"
+then
+      Item Switch206  sendcommand "ON"
+      Create Timer(now.plusSeconds(10)) [|sendcommand(Switch206 ,OFF)]
+       pitswitchdown recievedcomand "ON", Stop Timer
+
+end
+
+rule "unberella UP"
+when
+      Item channel201 recievedcomand "ON"
+then
+      item umbrellaswitchup recievedcommand "ON", sendcommand chennel201 "OFF"
+end
+
+rule "Umbrella Down"
+when 
+      Item channel202 recievedcommand "ON"
+then
+      Item umbrellaswitchdown recievedcommand "ON", swndcommand channel202 "OFF"
+end
+
+
+rule  "Low Water"
+when
+      Item floatswitch1  recievedcomand "ON"
+then 
+      createTimer(now.plusSeconds(10)),sendcomand(channel209 ,ON)
+end 
+
+
+
+//This is the Rules File
