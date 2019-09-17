@@ -24,7 +24,7 @@ Bridge mqtt:broker:home "home mqtt server" [host="openHABianPi",secure=false,cli
       Type switch : umbrelladown [stateTopic="POOLCONTROL/umbrella/relay/down", commandTopic="POOLCONTROL/umbrella/relay/down/set", on="ON", off="OFF"]
 
 
-      Type switch : pitup   [stateTopic="POOLCONTROL/pit/relay/up", commandTopic="POOLCONTROL/pit/up/set", on="UP", off="STOP"]
+      Type switch : pitup   [stateTopic="POOLCONTROL/pit/relay/up", commandTopic="POOLCONTROL/pit/relay/up/set", on="UP", off="STOP"]
       Type switch : pitdown [stateTopic="POOLCONTROL/pit/relay/down", commandTopic="POOLCONTROL/pit/relay/down/set", on="DOWN", off="STOP"]
       Type switch : pitout  [stateTopic="POOLCONTROL/pit/relay/out", commandTopic="POOLCONTROL/pit/relay/out/set", on="ON", off="OFF"]
       Type switch : pitin   [stateTopic="POOLCONTROL/pit/relay/in/", commandTopic="POOLCONTROL/pit/relay/in/set", on="ON", off="OFF"]
