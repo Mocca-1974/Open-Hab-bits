@@ -13,7 +13,6 @@ gpio:
       '/{root_topic}/{pin_name}/switch/down', # POOLCONTROL/umbrella/switch/down
     ]
     invert: true
-
   pit:
     pin: [26, 19, 13, 6]
     topic: [
@@ -25,18 +24,25 @@ gpio:
     invert: true
 
   floatswitch:
-    pin: [21, 20, 16, 12]
-    topic: '/{root_topic}/{pin_name}/{index}' # POOLCONTROL/floatswitch/{index}
-    first index: 1
-    invert: true
+    pin: [21, 20, 16, 12, 7, 8]
+    topic: [
+      '/{root_topic}/{pin_name}/low_water', # POOLCONTROL/floatswitch/low_water
+      '/{root_topic}/{pin_name}/fill/lower', # POOLCONTROL/floatswitch/fill/lower
+      '/{root_topic}/{pin_name}/fill/upper', # POOLCONTROL/floatswitch/fill/upper
+      '/{root_topic}/{pin_name}/overfill/lower', # POOLCONTROL/floatswitch/overfill/lower
+      '/{root_topic}/{pin_name}/overfill/upper', # POOLCONTROL/floatswitch/overfill/upper
+      '/{root_topic}/{pin_name}/spare', # POOLCONTROL/floatswitch/spare
+]
+first index: 1
+invert: true
 
 
 mcp230xx:
-  polling interval: 60
+  polling interval: 30
 
   Bus 1: 
     bus id: 1
-    address: 0x21
+    address: 0x20
     chip: mcp23017
 
     deckjet:
@@ -59,11 +65,11 @@ mcp230xx:
 
   Bus 2: 
     bus id: 1
-    address: 0x20
+    address: 0x21
     chip: mcp23017
    
     umbrella:
-      pin: [1, 2]
+      pin: [0, 1]
       topic: [
         '/{root_topic}/{pin_name}/relay/up', # POOLCONTROL/umbrella/relay/up
         '/{root_topic}/{pin_name}/relay/down', # POOLCONTROL/umbrella/relay/down
@@ -72,7 +78,7 @@ mcp230xx:
       invert: true
 
     pit:
-      pin: [3, 4, 5, 6]
+      pin: [2, 3, 4, 5]
       topic: [
         '/{root_topic}/{pin_name}/relay/up', # POOLCONTROL/pit/relay/up
         '/{root_topic}/{pin_name}/relay/down', # POOLCONTROL/pit/relay/down
@@ -83,27 +89,54 @@ mcp230xx:
       invert: true
 
     fan:
-      pin: [7, 8]
+      pin: [6, 7]
       topic: '/{root_topic}/{pin_name}/{index}' # POOLCONTROL/fan/{index}
       first index: 1
       direction: output
       invert: true
 
     warn:
-      pin: [9, 10, 11]
+      pin: [8, 9, 10]
       topic: '/{root_topic}/{pin_name}/{index}' # POOLCONTROL/warn/{index}
       first index: 1
       direction: output
       invert: true
 
     airpump:
-      pin: 12
+      pin: 11
       topic: '/{root_topic}/{pin_name}' # POOLCONTROL/airpump
       direction: output
       invert: true
 
     acidpump:
-      pin: 13
+      pin: 12
       topic: '/{root_topic}/{pin_name}' # POOLCONTROL/acidpump
       direction: output
       invert: true
+
+    spare:
+      pin: [13, 14, 15]
+      invert: true
+
+onewire:
+  polling interval: 30
+  bus scan: true
+  Heaterwater:
+    address: ['28-0204917768e5', '28-021491776dd8']
+    topic: [
+      '/{root_topic}/temp/heater/in',
+      '/{root_topic}/temp/heater/out',  
+    ]
+  Filterwater:
+    address: ['28-02199177a4cd', '28-0317601067ff']
+    topic: [
+      '/{root_topic}/temp/water/filter/in',
+      '/{root_topic}/temp/water/filter/out',  
+    ]
+
+  Poolwater:
+    address: ['28-0317603808ff', '28-0317603dddff']
+    topic: [
+      '/{root_topic}/temp/pool/water/in',
+      '/{root_topic}/temp/pool/water/out',  
+    ]
