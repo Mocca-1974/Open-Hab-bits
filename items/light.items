@@ -1,0 +1,54 @@
+
+
+Group light_group "Lights" (maintenance_group)
+
+    Switch light1 "Light 1" (light_group)      { channel="mqtt:topic:home:garage:spare:1", autoupdate="false" }
+    Switch light_spare_2 "Light 2" (light_group) { channel="mqtt:topic:home:garage:spare:2", autoupdate="false" } 
+    Switch light_spare_3 "Light 3" (light_group) { channel="mqtt:topic:home:garage:spare:3", autoupdate="false" }
+    Switch light_Spare_4 "Light 4" (light_group) { channel="mqtt:topic:home:garage:spare:4", autoupdate="false" }
+    Switch light_spare_5 "Light 5" (light_group) { channel="mqtt:topic:home:garage:spare:4", autoupdate="false" }
+    Switch light_spare_6 "Light 6" (light_group) { channel="mqtt:topic:home:garage:spare:6", autoupdate="false" }
+    Switch light_spare_7 "Light 7" (light_group) { channel="mqtt:topic:home:garage:spare:7", autoupdate="false" }
+    Switch light_spare_8 "Light 8" (light_group) { channel="mqtt:topic:home:garage:spare:8", autoupdate="false" } 
+    Switch light_spare_9 "Light 9" (light_group) { channel="mqtt:topic:home:garage:spare:9", autoupdate="false" }
+    Switch light_Spare_10 "Light 10" (light_group) { channel="mqtt:topic:home:garage:spare:10", autoupdate="false" }
+    Switch light_spare_11 "Light 11" (light_group) { channel="mqtt:topic:home:garage:spare:11", autoupdate="false" }
+    Switch light_Spar9_12 "Light 12" (light_group) { channel="mqtt:topic:home:garage:spare:12", autoupdate="false" }
+    Switch light_spare_13 "Light 13" (light_group) { channel="mqtt:topic:home:garage:spare:13", autoupdate="false" }
+    Switch light_spare_14 "Light 14" (light_group) { channel="mqtt:topic:home:garage:spare:14", autoupdate="false" }
+   Switch light_spare_15  "Light 15" (light_group) { channel="mqtt:topic:home:garage:spare:15", autoupdate="false" }
+    Switch light_Spare_16 "Light 16" (light_group) { channel="mqtt:topic:home:garage:spare:16", autoupdate="false" }
+
+    Switch light_spare_17 "Light 17" (light_group) { channel="mqtt:topic:home:garage:spare1:1", autoupdate="false" }
+    Switch light_spare_18 "Light 18" (light_group) { channel="mqtt:topic:home:garage:spare1:2", autoupdate="false" }
+    Switch light_spare_19 "Light 19" (light_group) { channel="mqtt:topic:home:garage:spare1:3", autoupdate="false" }
+    Switch light_spare_20 "Light 20" (light_group) { channel="mqtt:topic:home:garage:spare1:4", autoupdate="false" } 
+    Switch light_spare_21 "Light 21" (light_group) { channel="mqtt:topic:home:garage:spare1:5", autoupdate="false" }
+    Switch light_Spar9_22 "Light 22" (light_group) { channel="mqtt:topic:home:garage:spare1:6", autoupdate="false" }
+    Switch light_spare_23 "Light 23" (light_group) { channel="mqtt:topic:home:garage:spare1:7", autoupdate="false" }
+    Switch light_spare_24 "Light 24" (light_group) { channel="mqtt:topic:home:garage:spare1:8", autoupdate="false" }
+    Switch light_spare_25 "Light 25" (light_group) { channel="mqtt:topic:home:garage:spare1:9", autoupdate="false" }
+    Switch light_spare_26 "Light 26" (light_group) { channel="mqtt:topic:home:garage:spare1:11", autoupdate="false" } 
+    Switch light_spare_27 "Light 27" (light_group) { channel="mqtt:topic:home:garage:spare1:11", autoupdate="false" }
+    Switch light_Spare_28 "Light 28" (light_group) { channel="mqtt:topic:home:garage:spare1:12", autoupdate="false" }
+    Switch light_spare_29 "Light 29" (light_group) { channel="mqtt:topic:home:garage:spare1:13", autoupdate="false" }
+    Switch light_spare_30 "Light 30" (light_group) { channel="mqtt:topic:home:garage:spare1:14", autoupdate="false" }
+    Switch light_spare_31 "Light 31" (light_group) { channel="mqtt:topic:home:garage:spare1:15", autoupdate="false" }
+    Switch light_spare_32 "Light 32" (light_group) { channel="mqtt:topic:home:garage:spare1:16", autoupdate="false" } 
+
+    Switch light_spare_33 "Light 33" (light_group) { channel="mqtt:topic:home:garage:spare2:1", autoupdate="false" }
+    Switch light_Spare_34 "Light 34" (light_group) { channel="mqtt:topic:home:garage:spare2:2", autoupdate="false" }
+    Switch light_spare_35 "Light 35" (light_group) { channel="mqtt:topic:home:garage:spare2:3", autoupdate="false" }
+    Switch light_spare_36 "Light 36" (light_group) { channel="mqtt:topic:home:garage:spare2:4", autoupdate="false" }
+    Switch light_spare_37 "Light 37" (light_group) { channel="mqtt:topic:home:garage:spare2:5", autoupdate="false" }
+    Switch light_spare_38 "Light 38" (light_group) { channel="mqtt:topic:home:garage:spare2:6", autoupdate="false" } 
+    Switch light_spare_39 "Light 39" (light_group) { channel="mqtt:topic:home:garage:spare2:7", autoupdate="false" }
+    Switch light_Spare_40 "Light 40" (light_group) { channel="mqtt:topic:home:garage:spare2:8", autoupdate="false" }
+    Switch light_spare_41 "Light 41" (light_group) { channel="mqtt:topic:home:garage:spare2:9", autoupdate="false" }
+    Switch light_spare_42 "Light 42" (light_group) { channel="mqtt:topic:home:garage:spare2:10", autoupdate="false" }
+    Switch light_spare_43 "Light 43" (light_group) { channel="mqtt:topic:home:garage:spare2:11", autoupdate="false" }
+    Switch light_spare_44 "Light 44" (light_group) { channel="mqtt:topic:home:garage:spare2:12", autoupdate="false" } 
+    Switch light_spare_45 "Light 45" (light_group) { channel="mqtt:topic:home:garage:spare2:13", autoupdate="false" }
+    Switch light_Spare_46 "Light 46" (light_group) { channel="mqtt:topic:home:garage:spare2:14", autoupdate="false" }
+    Switch light_spare_47 "Light 47" (light_group) { channel="mqtt:topic:home:garage:spare2:15", autoupdate="false" }
+    Switch light_spare_48 "Light 48" (light_group) { channel="mqtt:topic:home:garage:spare2:16", autoupdate="false" }                        

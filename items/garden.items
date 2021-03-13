@@ -1,0 +1,23 @@
+
+//      GARDEN ITEMS
+
+
+
+Group garden_group "Garden" (maintenance_group)
+
+    // Lighting
+   // Switch garden_lights "Garden Lights" (garden_group) { channel="mqtt:topic:home:pool:garden_lights", autoupdate="false" }
+
+
+
+    // Garden 
+    Switch garden_switch_1 "Garden  1" (garden_group) { channel="mqtt:topic:home:house:garden:1", autoupdate="false" }
+    Switch garden_switch_2 "Garden  2" (garden_group) { channel="mqtt:topic:home:house:garden_lights", autoupdate="false" }
+    Switch garden_switch_3 "Garden  3" (garden_group) { channel="mqtt:topic:home:house:garden_lights", autoupdate="false" }
+    Switch garden_switch_4 "Garden  4" (garden_group) { channel="mqtt:topic:home:house:garden_lights", autoupdate="false" }
+   // Switch garden_switch_5 "Garden  5" (garden_group) { channel="mqtt:topic:home:pool:garden_lights", autoupdate="false" }
+  //  Switch garden_switch_6 "Garden  6" (garden_group) { channel="mqtt:topic:home:pool:garden_lights", autoupdate="false" }
+
+   
+
+

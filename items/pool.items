@@ -1,0 +1,94 @@
+
+//      POOL ITEMS
+
+Group pool_group "Pool" (maintenance_group)
+
+    // Deck Jets
+    Group:Switch:OR(ON,OFF) pool_deckjets_group "Deck Jets" (pool_group)
+        Switch pool_deckjet_1 "Deck Jet 1" (pool_deckjets_group) { channel="mqtt:topic:home:pool:deckjet1", autoupdate="false" }
+        Switch pool_deckjet_2 "Deck Jet 2" (pool_deckjets_group) { channel="mqtt:topic:home:pool:deckjet2", autoupdate="false" }
+        Switch pool_deckjet_3 "Deck Jet 3" (pool_deckjets_group) { channel="mqtt:topic:home:pool:deckjet3", autoupdate="false" }
+        Switch pool_deckjet_4 "Deck Jet 4" (pool_deckjets_group) { channel="mqtt:topic:home:pool:deckjet4", autoupdate="false" }
+        Switch pool_deckjet_5 "Deck Jet 5" (pool_deckjets_group) { channel="mqtt:topic:home:pool:deckjet5", autoupdate="false" }
+        Switch pool_deckjet_6 "Deck Jet 6" (pool_deckjets_group) { channel="mqtt:topic:home:pool:deckjet6", autoupdate="false" }
+        Switch pool_deckjet_7 "Deck Jet 7" (pool_deckjets_group) { channel="mqtt:topic:home:pool:deckjet7", autoupdate="false" }
+        Switch pool_deckjet_8 "Deck Jet 8" (pool_deckjets_group) { channel="mqtt:topic:home:pool:deckjet8", autoupdate="false" }
+        Switch pool_deckjet_9 "Deck Jet 9" (pool_deckjets_group) { channel="mqtt:topic:home:pool:deckjet9", autoupdate="false" }
+        Switch pool_deckjet_10 "Deck Jet 10" (pool_deckjets_group) { channel="mqtt:topic:home:pool:deckjet10", autoupdate="false" }
+        Switch pool_deckjet_11 "Deck Jet 11" (pool_deckjets_group) { channel="mqtt:topic:home:pool:deckjet11", autoupdate="false" }
+        Switch pool_deckjet_12 "Deck Jet 12" (pool_deckjets_group) { channel="mqtt:topic:home:pool:deckjet12", autoupdate="false" }
+
+    Group pool_temp_group "Water Temp" (pool_group)
+        Number ppol_temp_heater_in "Heater Inlet [%.1f °C]" (pool_temp_group) { channel="mqtt:topic:home:pool:temp_heater_in" }
+        Number pool_temp_heater_out  "Heater Outlet [%.1f °C]"(pool_temp_group) { channel="mqtt:topic:home:pool:temp_heater_out"  }
+        Number pool_temp_water_filter_in "Water Filter Inlet [%.1f °C]"  (pool_temp_group) { channel="mqtt:topic:home:pool:temp_water_filter_in"  }
+        Number pool_temp_water_filter_out "Water Filter Outlet [%.1f °C]" (pool_temp_group) { channel="mqtt:topic:home:pool:temp_water_filter_out"  }
+        Number pool_temp_water_in "Pool Water Inlet [%.1f °C]" (pool_temp_group) { channel="mqtt:topic:home:pool:temp_pool_water_in" }
+        Number pool_temp_water_out "Pool Water Outlet [%.1f °C]" (pool_temp_group) { channel="mqtt:topic:home:pool:temp_pool_water_out" }
+
+    Group air_temp_group "Air Temp" (pool_group)
+        Number temp_outside  "Outside Air Temp [%.1f °C]" (air_temp_group) { channel="mqtt:topic:home:pool:temp_outside" }
+        Number temp_shed "Inside Shed Air Temp [%.1f °C]" (air_temp_group) { channel="mqtt:topic:home:pool:temp_shed" }
+        Number temp_controlbox  "Controlbox Air Temp [%.1f °C]" (air_temp_group) { channel="mqtt:topic:home:pool:temp_controlbox" }
+        Number temp_blower  "Air Blower Air Temp [%.1f °C]" (air_temp_group) { channel="mqtt:topic:home:pool:temp_blower" }
+
+    //Water
+    Switch pool_waterpump "Water Pump" (pool_group) { channel="mqtt:topic:home:pool:waterpump", autoupdate="false" }
+    Switch pool_waterfall "Water Fall" (pool_group) { channel="mqtt:topic:home:pool:waterfall", autoupdate="false" }
+    Switch pool_waterfill "Water Fill" (pool_group) { channel="mqtt:topic:home:pool:waterfill", autoupdate="false" }
+    Switch pool_wateroverfill "Water Overfill" (pool_group) { channel="mqtt:topic:home:pool:wateroverfill", autoupdate="false" }
+
+    //Umbrella
+    Group pool_umbrella_group "Umbrella" (pool_group)
+         String pool_umbrella "Umbrella [%s]" (pool_umbrella){ autoupdate="false"}
+       // Switch pool_umbrellaup "Umbrella Up" (pool_umbrella_group)              {channel="mqtt:topic:home:pool:umbrellaup", autoupdate="false" }
+        //Switch pool_umbrelladown "Umbrella Down" (pool_umbrella_group)          {channel="mqtt:topic:home:pool:umbrelladown", autoupdate="false" }
+
+        Switch pool_umbrellaup "Umbella Up" (pool_umbrella_group) {channel="mqtt:topic:home:pool:umbrellaup", autoupdate="false" }
+        //String pool_umbrella_relay_up_set (pool_umbrella_group) {channel="mqtt:topic:home:pool:umbrellaup_set", autoupdate="false" }
+        //String pool_umbrella_relay_up_pulse (pool_umbrella_group) {channel="mqtt:topic:home:pool:umbrellaup_pulse", autoupdate="false" }
+
+        Switch pool_umbrelladown "Umbella Down" (pool_umbrella_group) {channel="mqtt:topic:home:pool:umbrelladown", autoupdate="false" }
+        //String pool_umbrella_relay_down_set (pool_umbrella_group) {channel="mqtt:topic:home:pool:umbrelladown_set", autoupdate="false" }
+        //String pool_umbrella_relay_down_pulse (pool_umbrella_group) {channel="mqtt:topic:home:pool:umbrelladown_pulse", autoupdate="false" }
+
+    //Pit Motion
+    Group pool_pit_group "Pit" (pool_group)
+        String pool_pit_state "Pit [%s]" (pool_pit_group){ autoupdate="false"}
+        Switch pool_pit_relay_up "Pit Up Actuator [%s]" (pool_pit_group) { expire="45s,command=OFF", channel="mqtt:topic:home:pool:pitup", autoupdate="false" }
+        Switch pool_pit_relay_down "Pit Down Actuator [%s]" (pool_pit_group) { expire="45s,command=OFF", channel="mqtt:topic:home:pool:pitdown", autoupdate="false" }
+        Switch pool_pit_relay_in "Pit In Actuator [%s]" (pool_pit_group) { expire="35s,command=OFF", channel="mqtt:topic:home:pool:pitin", autoupdate="false" }
+        Switch pool_pit_relay_out "Pit Out Actuator [%s]" (pool_pit_group) { expire="35s,command=OFF", channel="mqtt:topic:home:pool:pitout", autoupdate="false" }
+        Switch pool_pit_switch_up "Pit Up Limit [%s]" (pool_pit_group) { channel="mqtt:topic:home:pool:pitSWup", autoupdate="false" }
+        Switch pool_pit_switch_down "Pit Down Limit [%s]" (pool_pit_group) { channel="mqtt:topic:home:pool:pitSWdown", autoupdate="false" }
+        Switch pool_pit_switch_in "Pit In Limit [%s]" (pool_pit_group) { channel="mqtt:topic:home:pool:pitSWin", autoupdate="false" }
+        Switch pool_pit_switch_out "Pit Out Limit [%s]" (pool_pit_group) { channel="mqtt:topic:home:pool:pitSWout", autoupdate="false" }
+
+    //Fan Controls
+    Switch pool_control_box_fan "Controller Box Fan" (pool_group) { channel="mqtt:topic:home:pool:fan2", autoupdate="false" }
+
+    //Warning Lights
+    Group pool_warning_group "Warnings" (pool_group)
+        Switch pool_low_water       "Low Water Light"           (pool_warning_group) { channel="mqtt:topic:home:pool:low_water", autoupdate="false" }
+        Switch pool_fill_error      "Filling Error"             (pool_warning_group) { channel="mqtt:topic:home:pool:fill_error", autoupdate="false"}
+        Switch pool_overfill_error  "Overfilling Error"         (pool_warning_group) { channel="mqtt:topic:home:pool:overfill_error", autoupdate="false"}
+        Switch pool_acid_level_low  "Acid Level Low light"      (pool_warning_group) { channel="mqtt:topic:home:pool:acid_level_low", autoupdate="false"}
+
+    //Air Pump
+    Switch pool_air_pump "Air Pump" (pool_group) { channel="mqtt:topic:home:pool:airpump", autoupdate="false" }
+
+    //Acid Pump
+    Group pool_acidpump_group "Acid Pump" (pool_group)
+        Switch pool_acidinject "Inject 250ml of Acid" (pool_acidpump_group)  {autoupdate="false"}
+        Switch pool_acidpump "Acid Pump" (pool_acidpump_group)               {channel="mqtt:topic:home:pool:acidpump", autoupdate="false" }
+        Switch pool_acidpumpflush "Acid Pump flush" (pool_acidpump_group)    {channel="mqtt:topic:home:pool:acidpumpflush", autoupdate="false" }
+
+    // Float Switches
+    Group pool_float_switches_group "Float Switches" (pool_group)
+        Switch pool_floatSW_low_water "Low Water" (pool_float_switches_group) { channel="mqtt:topic:home:pool:floatSW_low_water", autoupdate="false" }
+        Switch pool_floatSW_fill_lower "Fill Lower" (pool_float_switches_group) { channel="mqtt:topic:home:pool:floatSW_fill_lower", autoupdate="false" }
+        Switch pool_floatSW_fill_upper "Fill Upper" (pool_float_switches_group) { channel="mqtt:topic:home:pool:floatSW_fill_upper", autoupdate="false" }
+        Switch pool_floatSW_overfill_lower "Overfill Lower" (pool_float_switches_group) { channel="mqtt:topic:home:pool:floatSW_overfill_lower", autoupdate="false" }
+        Switch pool_floatSW_overfill_upper "Overfill Upper" (pool_float_switches_group) { channel="mqtt:topic:home:pool:floatSW_overfill_upper", autoupdate="false" }
+        Switch pool_floatSW_acid_levellow "Acid Level Low" (pool_float_switches_group) { channel="mqtt:topic:home:pool:floatSW_acid_levellow", autoupdate="false" }
+

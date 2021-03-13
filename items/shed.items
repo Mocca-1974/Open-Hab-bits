@@ -1,0 +1,7 @@
+
+//      SHED ITEMS
+
+
+Group shed_group "Shed" (maintenance_group)
+
+    Switch shed_ex_fan "Shed Exhaust Fan" (shed_group) { channel="mqtt:topic:home:pool:fan1", autoupdate="false" }

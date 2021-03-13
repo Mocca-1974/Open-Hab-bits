@@ -1,0 +1,28 @@
+
+
+Group garage_group "Garage" (maintenance_group)
+
+//Garage items
+
+    Switch house_garage_switch_1 "Garage 1" (garage_group) { channel="mqtt:topic:home:house:garage_1", autoupdate="false" }
+    Switch house_garage_switch_2 "Garage 2" (garage_group) { channel="mqtt:topic:home:house:garage_2", autoupdate="false" }
+    Switch house_garage_switsh_3 "Garage 3" (garage_group) { channel="mqtt:topic:home:house:garage_3", autoupdate="false" }
+    Switch house_garage_switch_4 "Garage 4" (garage_group) { channel="mqtt:topic:home:house:garage_4", autoupdate="false" }
+    Switch house_garage_switch_5 "Garage 5" (garage_group) { channel="mqtt:topic:home:house:garage_5", autoupdate="false" }
+    Switch house_garage_switch_6 "Garage 6" (garage_group) { channel="mqtt:topic:home:house:garage_6", autoupdate="false" }
+
+  
+    //Switch pool_control_box_fan "Controller Box Fan" (pool_group) { channel="mqtt:topic:home:pool:fan2", autoupdate="false" }
+
+   // Switch garage_spare_7 "Garage 7" (garage_group) { channel="mqtt:topic:home:pool:garden_lights", autoupdate="false" }
+    //Switch garage_spare_8 "Garage 8" (garage_group) { channel="mqtt:topic:home:pool:garden_lights", autoupdate="false" }
+
+    Switch house_garage_light_1 "Light 1" (garage_group) { channel="mqtt:topic:home:house:garage_light_1", autoupdate="false" }
+    Switch house_garage_light_2 "Light 2" (garage_group) { channel="mqtt:topic:home:house:garage_light_2", autoupdate="false" } 
+    Switch house_garage_light_3 "Light 3" (garage_group) { channel="mqtt:topic:home:house:garage_light_3", autoupdate="false" }
+    Switch house_garage_light_4 "Light 4" (garage_group) { channel="mqtt:topic:home:house:garage_light_4", autoupdate="false" }
+    Switch house_garage_light_5 "Light 5" (garage_group) { channel="mqtt:topic:home:house:garage_light_5", autoupdate="false" }
+    Switch house_garage_light_6 "Light 6" (garage_group) { channel="mqtt:topic:home:house:garage_light_6", autoupdate="false" }
+  //  Switch light_garage_7 "Light 7" (garage_group) { channel="mqtt:topic:home:pool:garden_lights", autoupdate="false" }
+  //  Switch light_garage_8 "Light 8" (garage_group) { channel="mqtt:topic:home:pool:garden_lights", autoupdate="false" }
+            

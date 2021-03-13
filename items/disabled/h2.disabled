@@ -1,0 +1,10 @@
+
+String onewiretemp1Value "Temp 1 is [%s °C]" {channel="exec:command:onewiretemp1:output"}
+String onewiretemp2Value "Temp 2 is [%s °C]" {channel="exec:command:onewiretemp2:output"}
+String onewiretemp3Value "Temp 3 is [%s °C]" {channel="exec:command:onewiretemp3:output"}
+String onewiretemp4Value "Temp 4 is [%s °C]" {channel="exec:command:onewiretemp4:output"}
+String onewiretemp5Value "Temp 5 is [%s °C]" {channel="exec:command:onewiretemp5:output"}
+String onewiretemp6Value "Temp 6 is [%s °C]" {channel="exec:command:onewiretemp6:output"}
+String onewiretemp7Value "Temp 7 is [%s °C]" {channel="exec:command:onewiretemp7:output"}
+String onewiretemp8Value "Temp 8 is [%s °C]" {channel="exec:command:onewiretemp8:output"}
+

@@ -1,0 +1,9 @@
+
+Rollershutter   FF_Hallway_Warema "Warema Empore [%.0f %%]" <rollershutter> (FF_Hallway, gWarema) ["Switchable"]  {channel="homematic:HM-LC-Bl1PBU-FM:3da6a785:LEQ1XXXXX:1#LEVEL"}
+
+Switch Switch1 	 "Button 1"	 { gpio="pin:23 activelow:yes initialValue:high" }
+Switch Switch2 	 "Button 2"	{  gpio="pin:15 activelow:yes initialValue:high" }
+Switch Switch3        { gpio="pin:14 activelow:yes initialValue:high" }
+Switch Switch4       {  gpio="pin:1 activelow:yes initialValue:high" }
+
+

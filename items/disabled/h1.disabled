@@ -1,0 +1,16 @@
+//This is the Items File 
+
+//Demo items
+Switch DEMOSW "Demo Switch"
+
+Switch LED "LED" { gpio="pin:21" }
+ 
+//Relays
+Switch channel1 "Channel 1" { gpio="pin:22 activelow:yes initialValue:high" }
+Switch channel2 "Channel 2" { gpio="pin:10 activelow:yes initialValue:low" }
+Switch channel3 "Channel 3" { gpio="pin:9 activelow:yes"}
+Switch channel4 "Channel 4" { gpio="pin:11 activelow:no"}
+ 
+Contact DoorSensor "Door Sensor [%s]" { gpio="pin:16 debounce:10 activelow:yes" }
+Contact Button "Button [%s]" { gpio="pin:24 activelow:yes" }
+ 
