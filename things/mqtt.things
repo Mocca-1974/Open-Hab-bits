@@ -1,0 +1,170 @@
+Bridge mqtt:broker:home "home mqtt server" [host="openHABianPi",secure=false,clientID="openhab" ] {
+    Thing topic pool "POOLCONTROL"{
+        Channels:
+//outputs
+        Type switch : deckjet1 [stateTopic="POOLCONTROL/deckjet/1", commandTopic="POOLCONTROL/deckjet/1/set", on="ON", off="OFF"]
+        Type switch : deckjet2 [stateTopic="POOLCONTROL/deckjet/2", commandTopic="POOLCONTROL/deckjet/2/set", on="ON", off="OFF"]
+        Type switch : deckjet3 [stateTopic="POOLCONTROL/deckjet/3", commandTopic="POOLCONTROL/deckjet/3/set", on="ON", off="OFF"]
+        Type switch : deckjet4 [stateTopic="POOLCONTROL/deckjet/4", commandTopic="POOLCONTROL/deckjet/4/set", on="ON", off="OFF"]
+        Type switch : deckjet5 [stateTopic="POOLCONTROL/deckjet/5", commandTopic="POOLCONTROL/deckjet/5/set", on="ON", off="OFF"]
+        Type switch : deckjet6 [stateTopic="POOLCONTROL/deckjet/6", commandTopic="POOLCONTROL/deckjet/6/set", on="ON", off="OFF"]
+        Type switch : deckjet7 [stateTopic="POOLCONTROL/deckjet/7", commandTopic="POOLCONTROL/deckjet/7/set", on="ON", off="OFF"]
+        Type switch : deckjet8 [stateTopic="POOLCONTROL/deckjet/8", commandTopic="POOLCONTROL/deckjet/8/set", on="ON", off="OFF"]
+        Type switch : deckjet9 [stateTopic="POOLCONTROL/deckjet/9", commandTopic="POOLCONTROL/deckjet/9/set", on="ON", off="OFF"]
+        Type switch : deckjet10 [stateTopic="POOLCONTROL/deckjet/10", commandTopic="POOLCONTROL/deckjet/10/set", on="ON", off="OFF"]
+        Type switch : deckjet11 [stateTopic="POOLCONTROL/deckjet/11", commandTopic="POOLCONTROL/deckjet/11/set", on="ON", off="OFF"]
+        Type switch : deckjet12 [stateTopic="POOLCONTROL/deckjet/12", commandTopic="POOLCONTROL/deckjet/12/set", on="ON", off="OFF"]
+
+        Type switch : waterpump     [stateTopic="POOLCONTROL/water/pump", commandTopic="POOLCONTROL/water/pump/set", on="ON", off="OFF"]
+        Type switch : waterfall     [stateTopic="POOLCONTROL/water/fall", commandTopic="POOLCONTROL/water/fall/set", on="ON", off="OFF"]
+        Type switch : waterfill     [stateTopic="POOLCONTROL/water/fill", commandTopic="POOLCONTROL/water/fill/set", on="ON", off="OFF"]
+        Type switch : wateroverfill [stateTopic="POOLCONTROL/water/overfill", commandTopic="POOLCONTROL/water/overfill/set", on="ON", off="OFF"]
+
+        Type switch : umbrellaup        [stateTopic="POOLCONTROL/umbrella/relay/up", commandTopic="POOLCONTROL/umbrella/relay/up/set", on="ON", off="OFF"]
+        Type switch : umbrelladown      [stateTopic="POOLCONTROL/umbrella/relay/down", commandTopic="POOLCONTROL/umbrella/relay/down/set", on="ON", off="OFF"]
+
+        //Type switch : umbrellaup [stateTopic="POOLCONTROL/umbrella/relay/up", commandTopic="POOLCONTROL/umbrella/relay/up", on="ON", off="OFF"]
+        //Type string : umbrellaup_set [commandTopic="POOLCONTROL/umbrella/relay/up/set"]
+        //Type string : umbrellaup_pulse [commandTopic="POOLCONTROL/umbrella/relay/up/pulse"]
+
+        //Type switch : umbrelladown [stateTopic="POOLCONTROL/umbrella/relay/down", commandTopic="POOLCONTROL/umbrella/relay/down", on="ON", off="OFF"]
+        //Type string : umbrelladown_set [commandTopic="POOLCONTROL/umbrella/relay/down/set"]
+        //Type string : umbrelladown_pulse [commandTopic="POOLCONTROL/umbrella/relay/down/pulse"]
+
+        Type switch : pitup   [stateTopic="POOLCONTROL/pit/relay/up", commandTopic="POOLCONTROL/pit/relay/up/set", on="ON", off="OFF"]
+        Type switch : pitdown [stateTopic="POOLCONTROL/pit/relay/down", commandTopic="POOLCONTROL/pit/relay/down/set", on="ON", off="OFF"]
+        Type switch : pitout  [stateTopic="POOLCONTROL/pit/relay/out", commandTopic="POOLCONTROL/pit/relay/out/set", on="ON", off="OFF"]
+        Type switch : pitin   [stateTopic="POOLCONTROL/pit/relay/in", commandTopic="POOLCONTROL/pit/relay/in/set", on="ON", off="OFF"]
+
+        Type switch : fan1 [stateTopic="POOLCONTROL/fan/1", commandTopic="POOLCONTROL/fan/1/set", on="ON", off="OFF"]
+        Type switch : fan2 [stateTopic="POOLCONTROL/fan/2", commandTopic="POOLCONTROL/fan/2/set", on="ON", off="OFF"]
+
+        Type switch : airpump [stateTopic="POOLCONTROL/airpump", commandTopic="POOLCONTROL/airpump/set", on="ON", off="OFF"]
+
+        Type switch : acidpump      [stateTopic="POOLCONTROL/acidpump", commandTopic="POOLCONTROL/acidpump/set", on="ON", off="OFF"]
+        Type switch : acidpumpflush [stateTopic="POOLCONTROL/acidpumpflush", commandTopic="POOLCONTROL/acidpumpflush/set", on="ON", off="OFF"]
+
+        Type switch : low_water         [stateTopic="POOLCONTROL/warn/1",  commandTopic="POOLCONTROL/warn/1/set", on="ON", off="OFF"]
+        Type switch : fill_error        [stateTopic="POOLCONTROL/warn/2",  commandTopic="POOLCONTROL/warn/2/set", on="ON", off="OFF"]
+        Type switch : overfill_error    [stateTopic="POOLCONTROL/warn/3",  commandTopic="POOLCONTROL/warn/3/set", on="ON", off="OFF"]
+        Type switch : acid_level_low    [stateTopic="POOLCONTROL/warn/4",  commandTopic="POOLCONTROL/warn/4/set", on="ON", off="OFF"]
+
+        Type switch : garden_lights [stateTopic="POOLCONTROL/garden_lights", commandTopic="POOLCONTROL/garden_lights/set", on="ON", off="OFF"]
+
+//inputs
+        Type switch : pitSWup   [stateTopic="POOLCONTROL/pit/switch/up", on="ON", off="OFF"]
+        Type switch : pitSWdown [stateTopic="POOLCONTROL/pit/switch/down", on="ON", off="OFF"]
+        Type switch : pitSWout  [stateTopic="POOLCONTROL/pit/switch/out", on="ON", off="OFF"]
+        Type switch : pitSWin   [stateTopic="POOLCONTROL/pit/switch/in", on="ON", off="OFF"]
+
+        Type switch : floatSW_low_water   [stateTopic="POOLCONTROL/floatswitch/low_water", on="ON", off="OFF"]
+        Type switch : floatSW_fill_lower [stateTopic="POOLCONTROL/floatswitch/fill/lower", on="ON", off="OFF"]
+        Type switch : floatSW_fill_upper  [stateTopic="POOLCONTROL/floatswitch/fill/upper", on="ON", off="OFF"]
+        Type switch : floatSW_overfill_lower   [stateTopic="POOLCONTROL/floatswitch/overfill/lower", on="ON", off="OFF"]
+        Type switch : floatSW_overfill_upper   [stateTopic="POOLCONTROL/floatswitch/overfill/upper", on="ON", off="OFF"]
+        Type switch : floatSW_acid_levellow   [stateTopic="POOLCONTROL/floatswitch/lowacidlevel", on="ON", off="OFF"]
+
+
+        Type number : temp_heater_in        [stateTopic="POOLCONTROL/temp/heater/in"]
+        Type number : temp_heater_out       [stateTopic="POOLCONTROL/temp/heater/out"]
+        Type number : temp_water_filter_in  [stateTopic="POOLCONTROL/temp/water/filter/in"]
+        Type number : temp_water_filter_out [stateTopic="POOLCONTROL/temp/water/filter/out"]
+        Type number : temp_pool_water_in    [stateTopic="POOLCONTROL/temp/pool/water/in"]
+        Type number : temp_pool_water_out   [stateTopic="POOLCONTROL/temp/pool/water/out"]
+        Type number : temp_shed             [stateTopic="POOLCONTROL/temp/pool/shed/air/temp"]
+        Type number : temp_controlbox       [stateTopic="POOLCONTROL/temp/pool/controlbox/temp"]
+        Type number : temp_outside          [stateTopic="POOLCONTROL/temp/pool/outside/air/temp"]
+        Type number : temp_blower           [stateTopic="POOLCONTROL/temp/pool/airblower/air/temp"]
+
+
+
+
+ 
+
+
+    }
+ 
+
+
+
+    Thing topic house "Garagecontrol"{
+        Channels:     
+
+     //Outputs
+
+        Type switch : garage_1 [stateTopic="Garagecontrol/garage/1", commandTopic="Garagecontrol/garage/1/set", on="ON", off="OFF"]
+        Type switch : garage_2 [stateTopic="Garagecontrol/garage/2", commandTopic="Garagecontrol/garage/2/set", on="ON", off="OFF"]
+        Type switch : garage_3 [stateTopic="Garagecontrol/garage/3", commandTopic="Garagecontrol/garage/3/set", on="ON", off="OFF"]
+        Type switch : garage_4 [stateTopic="Garagecontrol/garage/4", commandTopic="Garagecontrol/garage/4/set", on="ON", off="OFF"]
+        Type switch : garage_5 [stateTopic="Garagecontrol/garage/5", commandTopic="Garagecontrol/garage/5/set", on="ON", off="OFF"]
+        Type switch : garage_6 [stateTopic="Garagecontrol/garage/6", commandTopic="Garagecontrol/garage/6/set", on="ON", off="OFF"]
+
+        Type switch : garage_light_1 [stateTopic="Garagecontrol/garage_light/1", commandTopic="Garagecontrol/garage_light/1/set", on="ON", off="OFF"]
+        Type switch : garage_light_2 [stateTopic="Garagecontrol/garage_light/2", commandTopic="Garagecontrol/garage_light/2/set", on="ON", off="OFF"]
+        Type switch : garage_light_3 [stateTopic="Garagecontrol/garage_light/3", commandTopic="Garagecontrol/garage_light/3/set", on="ON", off="OFF"]
+        Type switch : garage_light_4 [stateTopic="Garagecontrol/garage_light/4", commandTopic="Garagecontrol/garage_light/4/set", on="ON", off="OFF"]
+        Type switch : garage_light_5 [stateTopic="Garagecontrol/garage_light/5", commandTopic="Garagecontrol/garage_light/5/set", on="ON", off="OFF"]
+        Type switch : garage_light_6 [stateTopic="Garagecontrol/garage_light/6", commandTopic="Garagecontrol/garage_light/6/set", on="ON", off="OFF"]
+
+        Type switch : garden_switch_1 [stateTopic="Garagecontrol/garden/1", commandTopic="Garagecontrol/garden/1/set", on="ON", off="OFF"]
+        Type switch : garden_switch_2 [stateTopic="Garagecontrol/garden/2", commandTopic="Garagecontrol/garden/2/set", on="ON", off="OFF"]
+        Type switch : garden_switch_3 [stateTopic="Garagecontrol/garden/3", commandTopic="Garagecontrol/garden/3/set", on="ON", off="OFF"]
+        Type switch : garden_switch_4 [stateTopic="Garagecontrol/garden/4", commandTopic="Garagecontrol/garden/4/set", on="ON", off="OFF"]
+
+ //Type switch : fan1 [stateTopic="POOLCONTROL/fan/1", commandTopic="POOLCONTROL/fan/1/set", on="ON", off="OFF"]
+
+        Type switch : light1 [stateTopic="Garagecontrol/spare/1", commandTopic="Garagecontrol/spare/1/set", on="ON", off="OFF"]
+        Type switch : light2 [stateTopic="Garagecontrol/spare/2", commandTopic="Garagecontrol/sspare/2/set", on="ON", off="OFF"]
+        Type switch : light3 [stateTopic="Garagecontrol/spare/3", commandTopic="Garagecontrol/sspare/3/set", on="ON", off="OFF"]
+        Type switch : light4 [stateTopic="Garagecontrol/spare/4", commandTopic="Garagecontrol/sspare/4/set", on="ON", off="OFF"]
+        Type switch : light5 [stateTopic="Garagecontrol/spare/5", commandTopic="Garagecontrol/sspare/5/set", on="ON", off="OFF"]
+        Type switch : light6 [stateTopic="Garagecontrol/spare/6", commandTopic="Garagecontrol/sspare/6/set", on="ON", off="OFF"]
+        Type switch : light7 [stateTopic="Garagecontrol/spare/7", commandTopic="Garagecontrol/sspare/7/set", on="ON", off="OFF"]
+        Type switch : light8 [stateTopic="Garagecontrol/spare/8", commandTopic="Garagecontrol/sspare/8/set", on="ON", off="OFF"]
+        Type switch : light9 [stateTopic="Garagecontrol/spare/9", commandTopic="Garagecontrol/sspare/9/set", on="ON", off="OFF"]
+        Type switch : light10 [stateTopic="Garagecontrol/spare/10", commandTopic="Garagecontrol/sspare/10/set", on="ON", off="OFF"]
+        Type switch : light11 [stateTopic="Garagecontrol/spare/11", commandTopic="Garagecontrol/sspare/11/set", on="ON", off="OFF"]
+        Type switch : light12 [stateTopic="Garagecontrol/spare/12", commandTopic="Garagecontrol/sspare/12/set", on="ON", off="OFF"]
+        Type switch : light13 [stateTopic="Garagecontrol/spare/13", commandTopic="Garagecontrol/sspare/13set", on="ON", off="OFF"]
+        Type switch : light14 [stateTopic="Garagecontrol/spare/14", commandTopic="Garagecontrol/sspare/14/set", on="ON", off="OFF"]
+        Type switch : light15 [stateTopic="Garagecontrol/spare/15", commandTopic="Garagecontrol/sspare/15/set", on="ON", off="OFF"]
+        Type switch : light16 [stateTopic="Garagecontrol/spare/16", commandTopic="Garagecontrol/sspare/16/set", on="ON", off="OFF"]
+
+        Type switch : light17 [stateTopic="Garagecontrol/spare1/1", commandTopic="Garagecontrol/sspare1/1/set", on="ON", off="OFF"]
+        Type switch : light18 [stateTopic="Garagecontrol/spare1/2", commandTopic="Garagecontrol/sspare1/2/set", on="ON", off="OFF"]
+        Type switch : light19 [stateTopic="Garagecontrol/spare1/3", commandTopic="Garagecontrol/sspare1/3/set", on="ON", off="OFF"]
+        Type switch : light20 [stateTopic="Garagecontrol/spare1/4", commandTopic="Garagecontrol/sspare1/4/set", on="ON", off="OFF"]
+        Type switch : light21 [stateTopic="Garagecontrol/spare1/5", commandTopic="Garagecontrol/sspare1/5/set", on="ON", off="OFF"]
+        Type switch : light22 [stateTopic="Garagecontrol/spare1/6", commandTopic="Garagecontrol/sspare1/6/set", on="ON", off="OFF"]
+        Type switch : light23 [stateTopic="Garagecontrol/spare1/7", commandTopic="Garagecontrol/sspare1/7/set", on="ON", off="OFF"]
+        Type switch : light24 [stateTopic="Garagecontrol/spare1/8", commandTopic="Garagecontrol/sspare1/8/set", on="ON", off="OFF"]
+        Type switch : light25 [stateTopic="Garagecontrol/spare1/9", commandTopic="Garagecontrol/sspare1/9/set", on="ON", off="OFF"]
+        Type switch : light26 [stateTopic="Garagecontrol/spare1/10", commandTopic="Garagecontrol/sspare1/10/set", on="ON", off="OFF"]
+        Type switch : light27 [stateTopic="Garagecontrol/spare1/11", commandTopic="Garagecontrol/sspare1/11/set", on="ON", off="OFF"]
+        Type switch : light28 [stateTopic="Garagecontrol/spare1/12", commandTopic="Garagecontrol/sspare1/12/set", on="ON", off="OFF"]
+        Type switch : light29 [stateTopic="Garagecontrol/spare1/13", commandTopic="Garagecontrol/sspare1/13/set", on="ON", off="OFF"]
+        Type switch : light30 [stateTopic="Garagecontrol/spare1/14", commandTopic="Garagecontrol/sspare1/14/set", on="ON", off="OFF"]
+        Type switch : light31 [stateTopic="Garagecontrol/spare1/15", commandTopic="Garagecontrol/sspare1/15/set", on="ON", off="OFF"]
+        Type switch : light32 [stateTopic="Garagecontrol/spare1/16", commandTopic="Garagecontrol/sspare1/16/set", on="ON", off="OFF"]
+
+        Type switch : light33 [stateTopic="Garagecontrol/spare2/1", commandTopic="Garagecontrol/sspare2/1/set", on="ON", off="OFF"]
+        Type switch : light34 [stateTopic="Garagecontrol/spare2/2", commandTopic="Garagecontrol/sspare2/2/set", on="ON", off="OFF"]
+        Type switch : light35 [stateTopic="Garagecontrol/spare2/3", commandTopic="Garagecontrol/sspare2/3/set", on="ON", off="OFF"]
+        Type switch : light36 [stateTopic="Garagecontrol/spare2/4", commandTopic="Garagecontrol/sspare2/4/set", on="ON", off="OFF"]
+        Type switch : light37 [stateTopic="Garagecontrol/spare2/5", commandTopic="Garagecontrol/sspare2/5/set", on="ON", off="OFF"]
+        Type switch : light38 [stateTopic="Garagecontrol/spare2/6", commandTopic="Garagecontrol/sspare2/6/set", on="ON", off="OFF"]
+        Type switch : light39 [stateTopic="Garagecontrol/spare2/7", commandTopic="Garagecontrol/sspare2/7/set", on="ON", off="OFF"]
+        Type switch : light40 [stateTopic="Garagecontrol/spare2/8", commandTopic="Garagecontrol/sspare2/8/set", on="ON", off="OFF"]
+        Type switch : light41 [stateTopic="Garagecontrol/spare2/9", commandTopic="Garagecontrol/sspare2/9/set", on="ON", off="OFF"]
+        Type switch : light42 [stateTopic="Garagecontrol/spare2/10", commandTopic="Garagecontrol/sspare2/10/set", on="ON", off="OFF"]
+        Type switch : light43 [stateTopic="Garagecontrol/sspare2/11", commandTopic="Garagecontrol/sspare2/11/set", on="ON", off="OFF"]
+        Type switch : light44 [stateTopic="Garagecontrol/sspare2/12", commandTopic="Garagecontrol/sspare2/12/set", on="ON", off="OFF"]
+        Type switch : light45 [stateTopic="Garagecontrol/sspare2/13", commandTopic="Garagecontrol/sspare2/13/set", on="ON", off="OFF"]
+        Type switch : light46 [stateTopic="Garagecontrol/sspare2/14", commandTopic="Garagecontrol/sspare2/14/set", on="ON", off="OFF"]
+        Type switch : light47 [stateTopic="Garagecontrol/sspare2/15", commandTopic="Garagecontrol/sspare2/15/set", on="ON", off="OFF"]
+        Type switch : light48 [stateTopic="Garagecontrol/sspare2/16", commandTopic="Garagecontrol/sspare2/16/set", on="ON", off="OFF"]
+
+
+    }
+}
+
