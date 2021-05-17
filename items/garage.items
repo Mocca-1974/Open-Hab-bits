@@ -4,13 +4,14 @@ Group garage_group "Garage" (maintenance_group)
 
 //Garage items
 
-    Switch house_garage_switch_1 "Garage 1" (garage_group) { channel="mqtt:topic:home:house:garage_1", autoupdate="false" }
-    Switch house_garage_switch_2 "Garage 2" (garage_group) { channel="mqtt:topic:home:house:garage_2", autoupdate="false" }
-    Switch house_garage_switsh_3 "Garage 3" (garage_group) { channel="mqtt:topic:home:house:garage_3", autoupdate="false" }
-    Switch house_garage_switch_4 "Garage 4" (garage_group) { channel="mqtt:topic:home:house:garage_4", autoupdate="false" }
-    Switch house_garage_switch_5 "Garage 5" (garage_group) { channel="mqtt:topic:home:house:garage_5", autoupdate="false" }
-    Switch house_garage_switch_6 "Garage 6" (garage_group) { channel="mqtt:topic:home:house:garage_6", autoupdate="false" }
+    Switch house_garage1 "Garage 1" (garage_group) { channel="mqtt:topic:home:house:garage1", autoupdate="false" }
+    Switch house_garage2 "Garage 2" (garage_group) { channel="mqtt:topic:home:house:garage2", autoupdate="false" }
+    Switch house_garage3 "Garage 3" (garage_group) { channel="mqtt:topic:home:house:garage3", autoupdate="false" }
+    Switch house_garage4 "Garage 4" (garage_group) { channel="mqtt:topic:home:house:garage4", autoupdate="false" }
+    Switch house_garage5 "Garage 5" (garage_group) { channel="mqtt:topic:home:house:garage5", autoupdate="false" }
+    Switch house_garage6 "Garage 6" (garage_group) { channel="mqtt:topic:home:house:garage6", autoupdate="false" }
 
+  
   
     //Switch pool_control_box_fan "Controller Box Fan" (pool_group) { channel="mqtt:topic:home:pool:fan2", autoupdate="false" }
 
