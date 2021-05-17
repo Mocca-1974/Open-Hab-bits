@@ -1,0 +1,127 @@
+mqtt:
+  host: 192.168.1.34
+
+
+
+gpio:
+  polling interval: 60
+
+  umbrella:
+    pin: [5, 11]
+    topic: [
+      '/{root_topic}/{pin_name}/switch/up', # POOLCONTROL/umbrella/switch/up
+      '/{root_topic}/{pin_name}/switch/down', # POOLCONTROL/umbrella/switch/down
+    ]
+
+  rollerdoor:
+    pin: [26, 19, 13, 6]
+    topic: [
+      '/{root_topic}/{pin_name}/door1/up', # Garagecontrol/rollerdoor/door1/up
+      '/{root_topic}/{pin_name}/door1/down', # Garagecontrol/rollerdoor/door1/down
+      '/{root_topic}/{pin_name}/door2/up', # Garagecontrol/rollerdoor/door2/up
+      '/{root_topic}/{pin_name}/door2/down', # Garagecontrol/rollerdoor/door2/down
+    ]
+    invert: true
+
+
+
+i2c:
+  polling interval: 30
+
+  Bus 1: 
+    device: mcp23017
+    bus: 1
+    address: 0x20
+    mcp230xx:
+      garage:
+        pin: [0,1,2,3,4,5]
+        topic:  '/{root_topic}/{pin_name}/{index}' # Garagecontrol/garage/{index}
+        first index: 1
+        direction: output
+        invert: true
+
+      garage_light:
+        pin: [6,7,8,9,10,11]
+        topic:  '/{root_topic}/{pin_name}/{index}' # Garagecontrol/garage_light/{index}
+        first index: 1
+        direction: output
+        invert: true
+
+      garden:
+        pin: [12,13,14,15]
+        topic:  '/{root_topic}/{pin_name}/{index}' # Garagecontrol/garden/{index}
+        first index: 1
+        direction: output
+        invert: true
+
+  Bus 2: 
+    device: mcp23017
+    bus: 1
+    address: 0x21
+    mcp230xx:
+      spare:
+        pin: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+        topic:  '/{root_topic}/{pin_name}/{index}' # Garagecontrol/spare/{index}
+        first index: 1
+        direction: output
+        invert: true
+
+
+
+  Bus 3: 
+    device: mcp23017
+    bus: 1
+    address: 0x23
+    mcp230xx:
+      spare_1:
+        pin: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+        topic:  '/{root_topic}/{pin_name}/{index}' # Garagecontrol/spare_1/{index}
+        first index: 17
+        direction: output
+        invert: true
+
+     
+  Bus 4: 
+    device: mcp23017
+    bus: 1
+    address: 0x22
+    mcp230xx:
+      spare_2:
+        pin: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+        topic:  '/{root_topic}/{pin_name}/{index}' # Garagecontrol/spare_2/{index}
+        first index: 33
+        direction: output
+        invert: true
+ 
+
+
+   
+  Bus 5: 
+    device: mcp23017
+    bus: 1
+    address: 0x24
+    mcp230xx:
+      spare_3:
+        pin: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+        topic:  '/{root_topic}/{pin_name}/{index}' # Garagecontrol/spare_3/{index}
+        first index: 49
+        direction: output
+        invert: true
+
+     
+  Bus 6: 
+    device: mcp23017
+    bus: 1
+    address: 0x25
+    mcp230xx:
+      spare_4:
+        pin: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+        topic:  '/{root_topic}/{pin_name}/{index}' # Garagecontrol/spare_4/{index}
+        first index: 100
+        direction: output
+        invert: true
+  
+
+    
+    
+
